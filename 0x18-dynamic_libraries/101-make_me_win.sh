@@ -1,3 +1,3 @@
 #!/bin/bash
-wget -q -O /tmp/gigalib.so "https://github.com/Elmouinysaleh/alx-low_level_programming/blob/master/0x18-dynamic_libraries/gigalib.so"
-export LD_PRELOAD=/tmp/gigalib.so
+wget -p /tmp  https://github.com/Elmouinysaleh/alx-low_level_programming/raw/master/0x18-dynamic_libraries/nrandom.so
+export LD_PRELOAD=/tmp/nrandom.so
