@@ -6,6 +6,7 @@ char *shash_table_get(const shash_table_t *ht, const char *key);
 void shash_table_print(const shash_table_t *ht);
 void shash_table_print_rev(const shash_table_t *ht);
 void shash_table_delete(shash_table_t *ht);
+unsigned long int key_index(const unsigned char *key, unsigned long int size);
 
 /**
  * shash_table_create - function creates a sorted hash table.
