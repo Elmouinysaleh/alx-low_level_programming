@@ -38,7 +38,7 @@ typedef struct hash_table_s
 
 hash_node_t *update_node(hash_node_t *node, const char *key, char *value);
 hash_node_t *new_node(hash_node_t *);
-
+unsigned long int key_index(const unsigned char *key, unsigned long int size);
 
 
 /**
