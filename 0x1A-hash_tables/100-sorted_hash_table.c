@@ -48,8 +48,8 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 {
 	shash_node_t *new, *tmp;
 	char *value_copy;
-	unsigned long int index;
-	index = key_index((const unsigned char *)key, ht->size);
+	unsigned long int index = key_index((const unsigned char *)key, ht->size);
+	
 
 	if (ht == NULL || key == NULL || *key == '\0' || value == NULL)
 		return (0);
