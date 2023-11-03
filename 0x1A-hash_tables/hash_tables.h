@@ -6,19 +6,19 @@
 #include <string.h>
 
 /**
- * struct shash_node_s - Node of a hash table
+ * struct hash_node_s - Node of a hash table
  *
  * @key: The key, string
  * The key is unique in the HashTable
  * @value: The value corresponding to a key
  * @next: A pointer to the next node of the List
  */
-typedef struct shash_node_s
+typedef struct hash_node_s
 {
 	char *key;
 	char *value;
 	struct hash_node_s *next;
-} shash_node_t;
+} hash_node_t;
 
 /**
  * struct hash_table_s - Hash table data structure
