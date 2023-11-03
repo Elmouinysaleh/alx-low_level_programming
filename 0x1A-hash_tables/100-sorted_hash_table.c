@@ -6,7 +6,6 @@ char *shash_table_get(const shash_table_t *ht, const char *key);
 void shash_table_print(const shash_table_t *ht);
 void shash_table_print_rev(const shash_table_t *ht);
 void shash_table_delete(shash_table_t *ht);
-unsigned long int key_index(const unsigned char *key, unsigned long int size);
 
 /**
  * shash_table_create - function creates a sorted hash table.
@@ -49,8 +48,7 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 {
 	shash_node_t *new, *tmp;
 	char *value_copy;
-	unsigned long int index = key_index((const unsigned char *)key, ht->size);
-	
+	unsigned long int index;
 
 	if (ht == NULL || key == NULL || *key == '\0' || value == NULL)
 		return (0);
@@ -59,7 +57,7 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 	if (value_copy == NULL)
 		return (0);
 
-	
+	index = key_index((const unsigned char *)key, ht->size);
 	tmp = ht->shead;
 	while (tmp)
 	{
@@ -133,11 +131,11 @@ char *shash_table_get(const shash_table_t *ht, const char *key)
 {
 	shash_node_t *node;
 	unsigned long int index;
-        index = key_index((const unsigned char *)key, ht->size);
+
 	if (ht == NULL || key == NULL || *key == '\0')
 		return (NULL);
 
-	
+	index = key_index((const unsigned char *)key, ht->size);
 	if (index >= ht->size)
 		return (NULL);
 
